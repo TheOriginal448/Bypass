@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Testing Page</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <style>
+    /* Add a black background color to the top navigation */
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: #505050;
+      color: white;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #050505;
+      color: white;
+    }
+  </style>
+<body bgcolor="#000000">
+  <div class="topnav">
+    <a class="active" href="!Testing.html">Testing Page</a>
+    <a href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+      <a href="https://metallic-fork-production.up.railway.app/" targt="_blank">Metallic</a>
+    <a href="https://testing.pickledude448.repl.co/" target="_blank">Palladium</a>
+    <a href="https://incog.dev" target="_blank">Incog</a>
+  </div>
+
+</body>
+<body>
+  <canvas id="mycanvas"></canvas>
+</body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script>
+  var programCode = function (processingInstance) {
+    with (processingInstance) {
+      size(400, 400);
+      frameRate(30);
+
+      
+      var circleX = 100;
+      var circleY = 150;
+      
+    draw = function (){
+      background(0,0,0);
+      mouseClicked = function (){
+        if (mouseX > circleX + 150/2) {circleX += 5}
+        if (mouseX < circleX - 150/2) {circleX -=5}
+      }
+      fill(255,255,255);
+      ellipse(circleX,circleY, 150, 150);
+      fill(0,0,0);
+      ellipse(circleX - 40, circleY - 20, 20, 20);
+      ellipse(circleX + 40, circleY - 15, 20, 20);
+      stroke(100,100,100);
+      noFill();
+      //arc(100, 175, 100, 0, 50, 50);
+    }}
+  };
+
+  // Get the canvas that ProcessingJS will use
+  var canvas = document.getElementById("mycanvas");
+  // Pass the function to ProcessingJS constructor
+  var processingInstance = new Processing(canvas, programCode); 
+</script>
+</html>
