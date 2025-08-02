@@ -3,44 +3,46 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Webretro</title>
   <link rel="icon" type="image/x-icon" href="favicon.png" />
   <style>
+    :root {
+      --bg-dark: #111;
+      --text-light: #eee;
+      --primary: #007bff;
+      --accent: #ff4081;
+    }
+
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
     }
 
     .topnav {
-      background-color: #333;
-      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #222;
+      padding: 10px 0;
     }
 
     .topnav a,
-    .dropdown .dropbtn {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
+    .dropbtn {
+      color: white;
+      padding: 12px 18px;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
+      background: none;
       border: none;
-      background-color: inherit;
       cursor: pointer;
-      outline: none;
-      margin: 0;
-      font-family: Arial, sans-serif;
     }
 
     .topnav a:hover,
     .dropdown:hover .dropbtn {
-      background-color: red;
-      color: white;
+      background-color: #444;
     }
 
     .topnav a.active {
@@ -49,37 +51,44 @@
     }
 
     .dropdown {
-      float: left;
-      overflow: hidden;
+      position: relative;
+      z-index: 10;
     }
 
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f9f9f9;
+      top: 42px;
+      left: 0;
+      background-color: #333;
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
     }
 
     .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
       display: block;
+      color: #eee;
+      padding: 12px;
       text-align: left;
     }
 
     .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: #555;
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
+    h1 {
+      margin-top: 30px;
+      font-size: 3em;
+      color: var(--primary);
+    }
+
     h1 a {
-      color: #0000ff;
+      color: var(--primary);
       text-decoration: none;
     }
 
@@ -88,9 +97,9 @@
     }
 
     h2 {
-      color: #00ff00;
       margin-top: 2rem;
       margin-bottom: 0.5rem;
+      color: var(--accent);
     }
 
     h3 {
@@ -98,10 +107,11 @@
       max-width: 700px;
       margin: 1rem auto 2rem;
       line-height: 1.5;
+      color: var(--text-light);
     }
 
     a {
-      color: #00ff00;
+      color: var(--accent);
       text-decoration: none;
     }
 
@@ -111,17 +121,19 @@
 
     iframe {
       display: block;
-      margin: 2rem auto;
+      margin: 2rem auto 4rem;
       width: 100%;
       max-width: 1200px;
       height: 750px;
       border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
 
 <body>
-  <nav class="topnav" role="navigation">
+  <div class="topnav">
     <a href="index.html">Home</a>
     <div class="dropdown">
       <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Proxies</button>
@@ -153,39 +165,37 @@
       </div>
     </div>
     <a href="!about.html">About</a>
-  </nav>
+  </div>
 
-  <main>
-    <h1>
-      <a href="https://Webretro2.pickledude448.repl.co/" target="_blank" rel="noopener noreferrer">
-        Webretro
-      </a>
-    </h1>
+  <h1>
+    <a href="https://Webretro2.pickledude448.repl.co/" target="_blank" rel="noopener noreferrer">
+      Webretro
+    </a>
+  </h1>
 
-    <h3>
-      Webretro is an online emulator for retro games.
-    </h3>
+  <h3>
+    Webretro is an online emulator for retro games.
+  </h3>
 
-    <h2>
-      <a href="webretro-standalone.html" download>Download Standalone</a>
-    </h2>
+  <h2>
+    <a href="webretro-standalone.html" download>Download Standalone</a>
+  </h2>
 
-    <h2>Using Webretro:</h2>
+  <h2>Using Webretro:</h2>
 
-    <h3>
-      Use my <a href="!Roms.html">ROMS page</a> to get the ROMs of the games that you want. While on the main screen of
-      Webretro, select AutoDetect and upload the .zip file of the ROM file for the game. Select Controls in the top left,
-      then select Keybinds. Look at what each button on the game controller pairs to on your keyboard.
-    </h3>
+  <h3>
+    Use my <a href="!Roms.html">ROMS page</a> to get the ROMs of the games that you want. While on the main screen of
+    Webretro, select AutoDetect and upload the .zip file of the ROM file for the game. Select Controls in the top left,
+    then select Keybinds. Look at what each button on the game controller pairs to on your keyboard.
+  </h3>
 
-    <h2>Saving:</h2>
+  <h2>Saving:</h2>
 
-    <h3>
-      Click the saves button, then click save game.
-    </h3>
+  <h3>
+    Click the saves button, then click save game.
+  </h3>
 
-    <iframe src="https://Webretro2.pickledude448.repl.co/" loading="lazy" title="Webretro Online Emulator"></iframe>
-  </main>
+  <iframe src="https://Webretro2.pickledude448.repl.co/" loading="lazy" title="Webretro Online Emulator"></iframe>
 </body>
 
 </html>
