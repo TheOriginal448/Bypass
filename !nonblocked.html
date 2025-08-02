@@ -12,9 +12,10 @@
       --primary: #007bff;
       --accent: #00ff00;
       --nav-bg: #222;
-      --nav-hover: #444;
+      --hover-bg: #444;
       --dropdown-bg: #333;
       --dropdown-hover: #555;
+      --card-bg: #1e1e1e;
     }
 
     body {
@@ -23,7 +24,6 @@
       background-color: var(--bg-dark);
       color: var(--text-light);
       text-align: center;
-      padding: 1rem;
     }
 
     .topnav {
@@ -32,12 +32,11 @@
       justify-content: center;
       background-color: var(--nav-bg);
       padding: 10px 0;
-      margin-bottom: 2rem;
     }
 
     .topnav a,
     .dropbtn {
-      color: white;
+      color: var(--text-light);
       padding: 12px 18px;
       text-decoration: none;
       font-size: 16px;
@@ -49,12 +48,7 @@
 
     .topnav a:hover,
     .dropdown:hover .dropbtn {
-      background-color: var(--nav-hover);
-    }
-
-    .topnav a.active {
-      background-color: #050505;
-      color: white;
+      background-color: var(--hover-bg);
     }
 
     .dropdown {
@@ -89,44 +83,75 @@
       display: block;
     }
 
-    h2 {
+    h1 {
+      margin-top: 30px;
+      font-size: 3em;
+      color: var(--primary);
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 40px auto 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      width: 260px;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      color: var(--text-light);
+      text-align: center;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background-color: #2a2a2a;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
       color: var(--accent);
-      margin-bottom: 1rem;
     }
 
-    h3 {
-      font-weight: normal;
-      margin: 1rem 0 0.25rem;
-      color: var(--text-light);
-    }
-
-    h4 {
-      font-weight: normal;
-      margin: 0 0 1.5rem;
-      color: var(--text-light);
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+    .card-desc {
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #ccc;
     }
 
     a {
-      color: var(--accent);
+      color: inherit;
       text-decoration: none;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: var(--accent);
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-  <nav class="topnav" role="navigation" aria-label="Main navigation">
+  <div class="topnav">
     <a href="index.html">Home</a>
-
     <div class="dropdown">
-      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Proxies</button>
-      <div class="dropdown-content" aria-label="submenu">
+      <button class="dropbtn">Proxies</button>
+      <div class="dropdown-content">
         <a href="!Proxies.html">Main</a>
         <a href="!Tsunami.html">Tsunami</a>
         <a href="https://galaxy.hop.sh/web" target="_blank" rel="noopener noreferrer">Interstellar</a>
@@ -134,58 +159,56 @@
         <a href="https://ultra-max.pickledude448.repl.co/" target="_blank" rel="noopener noreferrer">Ultra-Max</a>
       </div>
     </div>
-
     <a href="!Webretro.html">Webretro</a>
-
     <div class="dropdown">
-      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Roms</button>
-      <div class="dropdown-content" aria-label="submenu">
+      <button class="dropbtn">Roms</button>
+      <div class="dropdown-content">
         <a href="!Roms.html">Main</a>
-        <a href="https://roms.pickledude448.repl.co/!Pokemon.html">Pokemon</a>
-        <a href="https://roms.pickledude448.repl.co/!Mario.html">Super Mario</a>
-        <a href="https://roms.pickledude448.repl.co/!LOZ.html">LOZ</a>
-        <a href="https://roms.pickledude448.repl.co/!Misc.html">Misc.</a>
+        <a href="https://roms.pickledude448.repl.co/!Pokemon.html" target="_blank" rel="noopener noreferrer">Pokemon</a>
+        <a href="https://roms.pickledude448.repl.co/!Mario.html" target="_blank" rel="noopener noreferrer">Super Mario</a>
+        <a href="https://roms.pickledude448.repl.co/!LOZ.html" target="_blank" rel="noopener noreferrer">LOZ</a>
+        <a href="https://roms.pickledude448.repl.co/!Misc.html" target="_blank" rel="noopener noreferrer">Misc.</a>
       </div>
     </div>
-
     <div class="dropdown">
-      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Games</button>
-      <div class="dropdown-content" aria-label="submenu">
+      <button class="dropbtn">Games</button>
+      <div class="dropdown-content">
         <a href="!Games.html">Main</a>
-        <a href="!Unblocked.html">Unblocked</a>
+        <a href="!Unblocked.html" class="active">Unblocked</a>
         <a href="!Blocked.html">Blocked</a>
       </div>
     </div>
-
     <a href="!about.html">About</a>
-  </nav>
+  </div>
 
-  <h2>Nonblocked</h2>
+  <h1>Nonblocked</h1>
 
-  <a href="https://unbl0ck.github.io/project-hub/games.html" target="_blank" rel="noopener noreferrer">
-    <h3>Project</h3>
-  </a>
-  <h4>This is a website created by another student.</h4>
+  <div class="section">
+    <a href="https://unbl0ck.github.io/project-hub/games.html" target="_blank" rel="noopener noreferrer" class="card">
+      <div class="card-title">Project</div>
+      <div class="card-desc">This is a website created by another student.</div>
+    </a>
 
-  <a href="https://chiboga.github.io/chilibowlflash/" target="_blank" rel="noopener noreferrer">
-    <h3>chiboga</h3>
-  </a>
-  <h4>This is the unblocked version of cbgames.</h4>
+    <a href="https://chiboga.github.io/chilibowlflash/" target="_blank" rel="noopener noreferrer" class="card">
+      <div class="card-title">chiboga</div>
+      <div class="card-desc">This is the unblocked version of cbgames.</div>
+    </a>
 
-  <a href="https://edit.coolmathgames.com" target="_blank" rel="noopener noreferrer">
-    <h3>edit.coolmathgames.com</h3>
-  </a>
-  <h4>This is an edited version of coolmath, it is now blocked in Lindbergh, but it may be unblocked in other schools.</h4>
+    <a href="https://edit.coolmathgames.com" target="_blank" rel="noopener noreferrer" class="card">
+      <div class="card-title">edit.coolmathgames.com</div>
+      <div class="card-desc">This is an edited version of coolmath, it is now blocked in Lindbergh, but it may be unblocked in other schools.</div>
+    </a>
 
-  <a href="https://lichess.org" target="_blank" rel="noopener noreferrer">
-    <h3>lichess.org</h3>
-  </a>
-  <h4>Chess.</h4>
+    <a href="https://lichess.org" target="_blank" rel="noopener noreferrer" class="card">
+      <div class="card-title">lichess.org</div>
+      <div class="card-desc">Chess.</div>
+    </a>
 
-  <a href="https://www.stlmugshots.com/game.php" target="_blank" rel="noopener noreferrer">
-    <h3>stlmugshots</h3>
-  </a>
-  <h4>A game where you try to match the mugshot with the crime they committed.</h4>
+    <a href="https://www.stlmugshots.com/game.php" target="_blank" rel="noopener noreferrer" class="card">
+      <div class="card-title">stlmugshots</div>
+      <div class="card-desc">A game where you try to match the mugshot with the crime they committed.</div>
+    </a>
+  </div>
 </body>
 
 </html>
