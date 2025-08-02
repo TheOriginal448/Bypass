@@ -8,18 +8,22 @@
   <style>
     :root {
       --bg-dark: #111;
-      --nav-bg: #222;
       --text-light: #eee;
       --primary: #007bff;
       --accent: #00ff00;
-      --hover-red: #cc0000;
+      --nav-bg: #222;
+      --nav-hover: #444;
+      --dropdown-bg: #333;
+      --dropdown-hover: #555;
+      --card-bg: #1e1e1e;
+      --card-shadow: rgba(0, 0, 0, 0.6);
     }
 
     body {
       margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-light);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       line-height: 1.5;
     }
@@ -41,11 +45,12 @@
       background: none;
       border: none;
       cursor: pointer;
+      user-select: none;
     }
 
     .topnav a:hover,
     .dropdown:hover .dropbtn {
-      background-color: var(--hover-red);
+      background-color: var(--nav-hover);
     }
 
     .dropdown {
@@ -57,7 +62,7 @@
       position: absolute;
       top: 42px;
       left: 0;
-      background-color: #333;
+      background-color: var(--dropdown-bg);
       min-width: 160px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       z-index: 1;
@@ -66,12 +71,13 @@
     .dropdown-content a {
       display: block;
       color: var(--text-light);
-      padding: 12px 16px;
+      padding: 12px;
       text-align: left;
+      text-decoration: none;
     }
 
     .dropdown-content a:hover {
-      background-color: #555;
+      background-color: var(--dropdown-hover);
     }
 
     .dropdown:hover .dropdown-content {
@@ -79,31 +85,70 @@
     }
 
     h1 {
-      color: var(--primary);
-      margin: 30px 0 15px;
+      margin-top: 30px;
       font-size: 3em;
+      color: var(--primary);
     }
 
-    h2 {
-      color: var(--accent);
-      margin: 30px 0 10px;
+    .section {
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 0 10px;
     }
 
-    h3 {
-      font-weight: normal;
-      margin: 15px auto;
-      max-width: 700px;
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      margin: 20px auto;
+      padding: 20px;
+      box-shadow: 0 6px 16px var(--card-shadow);
+      transition: transform 0.3s ease;
+      cursor: default;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .circle {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      border: 3px solid #000;
+      transition: background-color 0.3s ease;
+    }
+
+    .circleU {
+      background: var(--accent);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     iframe {
-      border: none;
-      margin: 20px auto;
-      width: 100%;
+      display: block;
+      margin: 40px auto;
+      width: 90vw;
       max-width: 1200px;
       height: 750px;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px var(--card-shadow);
     }
   </style>
 </head>
@@ -116,9 +161,9 @@
       <div class="dropdown-content">
         <a href="!Proxies.html">Main</a>
         <a href="!Tsunami.html">Tsunami</a>
-        <a href="https://galaxy.hop.sh/web" target="_blank" rel="noopener">Interstellar</a>
-        <a href="!Ultraviolet.html" class="active">Ultraviolet</a>
-        <a href="https://ultra-max.pickledude448.repl.co/" target="_blank" rel="noopener">Ultra-Max</a>
+        <a href="https://galaxy.hop.sh/web" target="_blank" rel="noopener noreferrer">Interstellar</a>
+        <a href="!Ultraviolet.html" style="background-color: var(--nav-hover);">Ultraviolet</a>
+        <a href="https://ultra-max.pickledude448.repl.co/" target="_blank" rel="noopener noreferrer">Ultra-Max</a>
       </div>
     </div>
     <a href="!Webretro.html">Webretro</a>
@@ -126,42 +171,49 @@
       <button class="dropbtn">Roms</button>
       <div class="dropdown-content">
         <a href="!Roms.html">Main</a>
-        <a href="https://roms.pickledude448.repl.co/!Pokemon.html" target="_blank" rel="noopener">Pokemon</a>
-        <a href="https://roms.pickledude448.repl.co/!Mario.html" target="_blank" rel="noopener">Super Mario</a>
-        <a href="https://roms.pickledude448.repl.co/!LOZ.html" target="_blank" rel="noopener">LOZ</a>
-        <a href="https://roms.pickledude448.repl.co/!Misc.html" target="_blank" rel="noopener">Misc.</a>
+        <a href="https://roms.pickledude448.repl.co/!Pokemon.html" target="_blank" rel="noopener noreferrer">Pokemon</a>
+        <a href="https://roms.pickledude448.repl.co/!Mario.html" target="_blank" rel="noopener noreferrer">Super Mario</a>
+        <a href="https://roms.pickledude448.repl.co/!LOZ.html" target="_blank" rel="noopener noreferrer">LOZ</a>
+        <a href="https://roms.pickledude448.repl.co/!Misc.html" target="_blank" rel="noopener noreferrer">Misc.</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropbtn">Games</button>
       <div class="dropdown-content">
         <a href="!Games.html">Main</a>
-        <a href="!nonblocked.html">Unblocked</a>
+        <a href="!nonblocked.html">Nonblocked</a>
         <a href="!Blocked.html">Blocked</a>
       </div>
     </div>
     <a href="!about.html">About</a>
   </div>
 
-  <h1>
-    <a href="https://ultraviolet.pickledude448.repl.co/" target="_blank" rel="noopener noreferrer">Ultraviolet</a>
-  </h1>
+  <h1>Ultraviolet</h1>
 
-  <h3>
-    Ultraviolet is a website that uses a proxy to remotely access any website. All websites that you visit via Ultraviolet will be unblocked.
-  </h3>
+  <div class="section">
+    <div class="card">
+      <div class="circle circleU">Proxy</div>
+      <p>
+        Ultraviolet is a website that uses a proxy to remotely access any website. All websites that you visit through Ultraviolet will be unblocked.
+      </p>
+    </div>
 
-  <h2>Browsing with Ultraviolet:</h2>
+    <div class="card">
+      <div class="circle circleU">Browsing</div>
+      <p>
+        Type what you want to search for or the URL of the website you want to visit into the bar in the middle. Then press Enter.<br />
+        Use the blue buttons in the top right to reload or exit.<br />
+      </p>
+    </div>
 
-  <h3>
-    Type what you want to search for or the URL of the website you want to visit into the bar in the middle. Then click Enter.
-  </h3>
+    <div class="card">
+      <div class="circle circleU">Quick Links</div>
+      <p>Quick links currently don't work, but will be updated soon.</p>
+    </div>
+  </div>
 
-  <h2>Quick Links:</h2>
+  <iframe src="https://ultraviolet.pickledude448.repl.co/" loading="lazy" title="Ultraviolet Proxy Website"></iframe>
 
-  <h3>They don't work.</h3>
-
-  <iframe src="https://ultraviolet.pickledude448.repl.co/" loading="lazy" title="Ultraviolet Proxy"></iframe>
 </body>
 
 </html>
