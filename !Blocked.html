@@ -1,136 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <title>Blocked</title>
-  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card-bg: #1a1a1a;
+      --text: #f0f0f0;
+      --highlight: #00ff00;
+      --link-hover: #1aff1a;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      text-align: center;
+    }
+
+    .topnav {
+      background-color: #222;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .topnav a,
+    .dropbtn {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .topnav a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: #444;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #eee;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #555;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    h1 {
+      color: var(--highlight);
+      margin-top: 30px;
+      font-size: 3em;
+    }
+
+    h2 a {
+      color: var(--highlight);
+      font-weight: normal;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0, 255, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card a {
+      color: var(--text);
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      color: var(--link-hover);
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
 </head>
-<style>
-  .topnav {
-    background-color: #333;
-    overflow: hidden;
-  }
 
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+<body>
 
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #505050;
-    color: white;
-  }
-
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #050505;
-    color: white;
-  }
-
-  /* Navbar container */
-  .navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial;
-  }
-
-  /* Links inside the navbar */
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  /* The dropdown container */
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-
-  /* Dropdown button */
-  .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    /* Important for vertical align on mobile phones */
-    margin: 0;
-    /* Important for vertical align on mobile phones */
-  }
-
-  /* Add a red background color to navbar links on hover */
-  .navbar a:hover,
-  .dropdown:hover .dropbtn {
-    background-color: red;
-  }
-
-  /* Dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  body {
-    color: #FFFFFF;
-    font-weight: normal;
-    text-align: center;
-  }
-
-  h3 {
-    font-weight: normal;
-  }
-
-  h2 {
-    color: #00FF00;
-  }
-
-  a {
-    color: #FFFFFF;
-  }
-</style>
-
-<body bgcolor="#000000">
   <div class="topnav">
     <a href="index.html">Home</a>
     <div class="dropdown">
-      <button class="dropbtn">Proxies
-      </button>
+      <button class="dropbtn">Proxies</button>
       <div class="dropdown-content">
         <a href="!Proxies.html">Main</a>
         <a href="!Tsunami.html">Tsunami</a>
@@ -141,8 +138,7 @@
     </div>
     <a href="!Webretro.html">Webretro</a>
     <div class="dropdown">
-      <button class="dropbtn">Roms
-      </button>
+      <button class="dropbtn">Roms</button>
       <div class="dropdown-content">
         <a href="!Roms.html">Main</a>
         <a href="https://roms.pickledude448.repl.co/!Pokemon.html">Pokemon</a>
@@ -152,8 +148,7 @@
       </div>
     </div>
     <div class="dropdown">
-      <button class="dropbtn">Games
-      </button>
+      <button class="dropbtn">Games</button>
       <div class="dropdown-content">
         <a href="!Games.html">Main</a>
         <a href="!nonblocked.html">Unblocked</a>
@@ -163,135 +158,52 @@
     <a href="!about.html">About</a>
   </div>
 
-  <h1>
-    <font color="#00FF00">Blocked</font>
-  </h1>
-  <h2><a href="!Proxies.html">Proxies</a></h2><br>
+  <h1>Blocked</h1>
+  <h2><a href="!Proxies.html">Use Proxies to Bypass</a></h2>
 
-  <!-- CBgames -->
-  <a style="text-decoration:none" href="https://cbgamesdev.github.io" target="_blank">
-    <h3>
+  <div class="section">
 
-      cbgamesdev.github.io</font>
+    <div class="card">
+      <a href="https://cbgamesdev.github.io" target="_blank">cbgamesdev.github.io</a>
+      <p>Main site for tons of unblocked games. Can be glitchy with Tsunami but still works well.</p>
+    </div>
 
-    </h3>
-  </a>
+    <div class="card">
+      <a href="https://sites.google.com/site/slopeunblockedgame/minecraft" target="_blank">Minecraft 1.5.2</a>
+      <p>Classic port of Minecraft. Opens in about:blank tab. May take a moment to load.</p>
+    </div>
 
-  <h4>
+    <div class="card">
+      <a href="https://coolmathgames.com" target="_blank">coolmathgames.com</a>
+      <p>Legendary game site. Many games deprecated post-Flash, but still some gems.</p>
+    </div>
 
-    This website can look a little funky when it's being used in Tsunami, but it still works.
-    This is the main website I go to to get games.</font>
-  </h4><br>
-  <!-- Minecraft -->
-  <a style="text-decoration:none" href="https://sites.google.com/site/slopeunblockedgame/minecraft?    authuser=0"
-    target="_blank" rel="noopener noreferrer">
-    <h3>
+    <div class="card">
+      <a href="https://geo-fs.com" target="_blank">geo-fs.com</a>
+      <p>Browser-based flight simulator. Works but may lag on slower devices.</p>
+    </div>
 
-      https://sites.google.com/site/slopeunblockedgame/minecraft? authuser=0</font>
+    <div class="card">
+      <a href="https://sites.google.com/view/games-unblockedd/" target="_blank">games-unblockedd</a>
+      <p>Massive collection of games. Functional, but cbgames is generally better.</p>
+    </div>
 
-    </h3>
-  </a>
+    <div class="card">
+      <a href="https://tinysubversions.com/game/spelunky/" target="_blank">Spelunky</a>
+      <p>Classic indie platformer. Controls are on-page. Wait for full load.</p>
+    </div>
 
-  <h4>
+    <div class="card">
+      <a href="https://yolk.quest" target="_blank">yolk.quest</a>
+      <p>Shell Shockers mirror. Choose “stomp” mode to play.</p>
+    </div>
 
-    It is a port of Minecraft 1.5.2</font>
-  </h4>
-  <h4>
+    <div class="card">
+      <a href="https://www.stumbleguys.com/play" target="_blank">Stumble Guys (Browser)</a>
+      <p>Works well with Ultra-Max. Full game experience in browser.</p>
+    </div>
 
-    Once you click the open mincraft button, it will load in a new tab outside of Tsunami,
-    that is fine since it is an about:blank tab.</font>
-  </h4>
-  <h4>
-
-    There are other games on this website, but this one is the best one. </font>
-  </h4><br>
-  <!-- coolmath -->
-  <a style="text-decoration:none" href="https://coolmathagames.com" target="_blank" rel="noopener noreferrer">
-    <h3>
-
-      coolmathgames.com</font>
-
-    </h3>
-  </a>
-
-  <h4>
-
-    A classic</font>
-  </h4>
-  <h4>
-
-    Most games do not work anymore since flash went down, but some still do.</font>
-  </h4><br>
-  <!-- Flight sim -->
-  <a style="text-decoration:none" href="geo-fs.com" target="_blank" rel="noopener noreferrer">
-    <h3>
-
-      geo-fs.com
-
-    </h3>
-  </a>
-  <h4>
-
-    This is a flight simulator, it is somewhat laggy though.
-
-  </h4>
-  <br>
-  <!-- unblocked (Blocked) games premium -->
-  <a style="text-decoration :none" href="https://sites.google.com/view/games-unblockedd/" target="_blank"
-    rel="noopener noreferrer">
-    <h3>
-
-      https://sites.google.com/view/games-unblockedd/</font>
-
-    </h3>
-  </a>
-
-  <h4>
-
-    This is a massive collection of games, some better and some worse, overall I would
-    recommend cbgames over this one, but it works.</font>
-
-  </h4><br>
-
-  <a style="text-decoration :none" href="https://tinysubversions.com/game/spelunky/" target="_blank"
-    rel="noopener noreferrer">
-    <h3>
-
-      https://tinysubversions.com/game/spelunky/</font>
-
-    </h3>
-  </a>
-
-  <h4>
-
-    This is just spelunky, the controls are on the website. You may have to wait for the
-    game to load.</font>
-
-  </h4><br>
-
-  <a style="text-decoration :none" href="https://yolk.quest" target="_blank" rel="noopener noreferrer">
-    <h3>
-
-      https://yolk.quest</font>
-
-    </h3>
-  </a>
-
-  <h4>
-
-    Shell Shockers, it requires stomp to be selected to be used.</font>
-
-  </h4><br>
-  <!-- Stumble Guys -->
-  <a style="text-decoration :none" href="https://www.stumbleguys.com/play" target="_blank" rel="noopener noreferrer">
-    <h3>
-      https://www.stumbleguys.com/play</font>
-    </h3>
-  </a>
-
-  <h4>
-    It's literally just stumble guys. It works with Ultra-Max</font>
-  </h4><br>
+  </div>
 
 </body>
 
