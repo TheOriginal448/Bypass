@@ -103,7 +103,8 @@
       box-shadow: 0 6px 16px var(--card-shadow);
       transition: transform 0.3s ease;
       cursor: default;
-      text-align: left;
+      /* Center text inside the card */
+      text-align: center;
       line-height: 1.5;
     }
 
@@ -154,7 +155,9 @@
     iframe {
       display: block;
       margin: 40px auto;
-      max-width: 100%;
+      /* Fill most horizontal space but leave a small margin */
+      width: 90vw;
+      max-width: 1200px;
       height: 750px;
       border: none;
       border-radius: 12px;
