@@ -3,131 +3,174 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tsunam</title>
+  <title>Tsunami</title>
   <link rel="icon" type="image/x-icon" href="favicon.png" />
   <style>
+    :root {
+      --bg-dark: #111;
+      --text-light: #eee;
+      --primary: #007bff;
+      --accent: #ff4081;
+      --card-bg: #1e1e1e;
+      --card-shadow: rgba(0, 0, 0, 0.6);
+      --nav-bg: #222;
+      --nav-hover: #444;
+      --dropdown-bg: #333;
+      --dropdown-hover: #555;
+    }
+
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
     }
 
     .topnav {
-      background-color: #333;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: var(--nav-bg);
+      padding: 10px 0;
     }
 
     .topnav a,
-    .dropdown .dropbtn {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
+    .dropbtn {
+      color: white;
+      padding: 12px 18px;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
+      background: none;
       border: none;
-      background-color: inherit;
       cursor: pointer;
-      outline: none;
-      margin: 0;
+      user-select: none;
     }
 
     .topnav a:hover,
     .dropdown:hover .dropbtn {
-      background-color: red;
-      color: white;
-    }
-
-    .topnav a.active {
-      background-color: #050505;
-      color: white;
+      background-color: var(--nav-hover);
     }
 
     .dropdown {
-      float: left;
-      overflow: hidden;
+      position: relative;
     }
 
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f9f9f9;
+      top: 42px;
+      left: 0;
+      background-color: var(--dropdown-bg);
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       z-index: 1;
     }
 
     .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
       display: block;
+      color: var(--text-light);
+      padding: 12px;
       text-align: left;
+      text-decoration: none;
     }
 
     .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: var(--dropdown-hover);
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    h1 a {
-      color: #0000ff;
-      text-decoration: none;
+    h1 {
+      margin-top: 30px;
+      font-size: 3em;
+      color: var(--primary);
     }
 
-    h1 a:hover {
-      text-decoration: underline;
+    .section {
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 0 10px;
     }
 
-    h2 {
-      color: #00ff00;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h3 {
-      font-weight: normal;
-      max-width: 700px;
-      margin: 1rem auto 2rem;
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      margin: 20px auto;
+      padding: 20px;
+      box-shadow: 0 6px 16px var(--card-shadow);
+      transition: transform 0.3s ease;
+      cursor: default;
+      text-align: left;
       line-height: 1.5;
     }
 
-    iframe {
-      display: block;
-      margin: 2rem auto;
-      width: 100%;
-      max-width: 1200px;
-      height: 750px;
-      border: none;
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .circle {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      border: 3px solid #000;
+      transition: background-color 0.3s ease;
+    }
+
+    .circleT {
+      background: var(--primary);
+    }
+
+    .circleW {
+      background: #6c757d;
+    }
+
+    .circleR {
+      background: #dc3545;
+    }
+
+    .circleG {
+      background: var(--accent);
     }
 
     a {
-      color: #00ff00;
+      color: var(--primary);
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
+
+    iframe {
+      display: block;
+      margin: 40px auto;
+      max-width: 100%;
+      height: 750px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px var(--card-shadow);
+    }
   </style>
 </head>
 
 <body>
-  <nav class="topnav" role="navigation">
+  <div class="topnav">
     <a href="index.html">Home</a>
     <div class="dropdown">
-      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Proxies</button>
-      <div class="dropdown-content" aria-label="submenu">
+      <button class="dropbtn">Proxies</button>
+      <div class="dropdown-content">
         <a href="!Proxies.html">Main</a>
-        <a href="!Tsunami.html" class="active">Tsunami</a>
+        <a href="!Tsunami.html" style="background-color: var(--nav-hover);">Tsunami</a>
         <a href="https://galaxy.hop.sh/web" target="_blank" rel="noopener noreferrer">Interstellar</a>
         <a href="!Ultraviolet.html">Ultraviolet</a>
         <a href="https://ultra-max.pickledude448.repl.co/" target="_blank" rel="noopener noreferrer">Ultra-Max</a>
@@ -135,8 +178,8 @@
     </div>
     <a href="!Webretro.html">Webretro</a>
     <div class="dropdown">
-      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Roms</button>
-      <div class="dropdown-content" aria-label="submenu">
+      <button class="dropbtn">Roms</button>
+      <div class="dropdown-content">
         <a href="!Roms.html">Main</a>
         <a href="https://roms.pickledude448.repl.co/!Pokemon.html">Pokemon</a>
         <a href="https://roms.pickledude448.repl.co/!Mario.html">Super Mario</a>
@@ -145,54 +188,52 @@
       </div>
     </div>
     <div class="dropdown">
-      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Games</button>
-      <div class="dropdown-content" aria-label="submenu">
+      <button class="dropbtn">Games</button>
+      <div class="dropdown-content">
         <a href="!Games.html">Main</a>
-        <a href="!nonblocked.html">Unblocked</a>
+        <a href="!nonblocked.html">Nonblocked</a>
         <a href="!Blocked.html">Blocked</a>
       </div>
     </div>
     <a href="!about.html">About</a>
-  </nav>
+  </div>
 
-  <main>
-    <h1>
-      <a href="https://01a633eb-dce9-48ff-a890-321313f5c296-00-rblb0i1vwisv.kirk.replit.dev/" target="_blank" rel="noopener noreferrer">
-        Tsunami
-      </a>
-    </h1>
+  <h1>Tsunami</h1>
 
-    <section>
-      <h3>
-        Tsunami is a website that uses a proxy to remotely access any website. All websites that you go to on Tsunami will be unblocked.
-        Tsunami is a little complicated though, so here is a tutorial on how to use it:
-      </h3>
-    </section>
+  <div class="section">
 
-    <section>
-      <h2>Browsing with Tsunami:</h2>
-      <h3>
-        Determine whether you are going to be searching Google, or going to a specific URL.<br />
-        If you are searching for something, select Ultraviolet; if you are going to a specific website, select Stomp.<br />
-        Enter the URL or search query in the bar.<br />
-        Press Enter.<br />
+    <div class="card">
+      <div class="circle circleT">Proxy</div>
+      <p>
+        Tsunami is a website that uses a proxy to remotely access any website. All websites that you visit through Tsunami will be unblocked.
+        It's a little complicated, so here is a tutorial on how to use it:
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="circle circleW">Browsing</div>
+      <p>
+        Determine whether you want to search Google or go to a specific URL.<br />
+        If searching, select Ultraviolet; if going to a specific site, select Stomp.<br />
+        Enter the URL or search query in the bar and press Enter.<br />
         To reload the page, click the blue reload button in the top right.<br />
-        To exit the website, press the blue X in the top right.
-      </h3>
-    </section>
+        To exit, press the blue X in the top right.
+      </p>
+    </div>
 
-    <section>
-      <h2>Using the arcade:</h2>
-      <h3>
+    <div class="card">
+      <div class="circle circleG">Arcade</div>
+      <p>
         To navigate to the arcade, click the arcade button in the top right.<br />
-        I wouldn't recommend using the emulators in Tsunami, I would use
-        <a href="!Webretro.html">Webretro</a> for that.<br />
-        Otherwise, you can just click the game you want to play and use it.
-      </h3>
-    </section>
+        It's recommended to use <a href="!Webretro.html">Webretro</a> for emulators.<br />
+        Otherwise, just click the game you want to play and enjoy.
+      </p>
+    </div>
 
-    <iframe src="https://tsunami3.pickledude448.repl.co/" loading="lazy" title="Tsunami Proxy Website"></iframe>
-  </main>
+  </div>
+
+  <iframe src="https://tsunami3.pickledude448.repl.co/" loading="lazy" title="Tsunami Proxy Website"></iframe>
+
 </body>
 
 </html>
