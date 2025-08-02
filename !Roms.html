@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Nonblocked</title>
+  <title>ROMs</title>
   <link rel="icon" type="image/x-icon" href="favicon.png" />
   <style>
     :root {
@@ -109,54 +109,123 @@
     a:hover {
       color: var(--accent);
     }
+
+    .image-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .image-links a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .image-links a:hover {
+      color: var(--accent);
+    }
+
+    .image-links img {
+      width: 180px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+      display: block;
+      margin-bottom: 8px;
+      user-select: none;
+    }
+
+    /* Active nav link style */
+    .dropdown-content a.active {
+      background-color: var(--hover-red);
+      font-weight: bold;
+    }
   </style>
 </head>
 
 <body>
-  <div class="topnav">
+  <nav class="topnav" role="navigation" aria-label="Main navigation">
     <a href="index.html">Home</a>
+
     <div class="dropdown">
-      <button class="dropbtn">Proxies</button>
-      <div class="dropdown-content">
-        <a href="!Proxies.html">Main</a>
-        <a href="!Tsunami.html">Tsunami</a>
-        <a href="https://galaxy.hop.sh/web" target="_blank" rel="noopener">Interstellar</a>
-        <a href="!Ultraviolet.html">Ultraviolet</a>
-        <a href="https://ultra-max.pickledude448.repl.co/" target="_blank" rel="noopener">Ultra-Max</a>
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Proxies</button>
+      <div class="dropdown-content" role="menu" aria-label="Proxies submenu">
+        <a href="!Proxies.html" role="menuitem">Main</a>
+        <a href="!Tsunami.html" role="menuitem">Tsunami</a>
+        <a href="https://galaxy.hop.sh/web" target="_blank" rel="noopener noreferrer" role="menuitem">Interstellar</a>
+        <a href="!Ultraviolet.html" role="menuitem">Ultraviolet</a>
+        <a href="https://ultra-max.pickledude448.repl.co/" target="_blank" rel="noopener noreferrer" role="menuitem">Ultra-Max</a>
       </div>
     </div>
+
     <a href="!Webretro.html">Webretro</a>
+
     <div class="dropdown">
-      <button class="dropbtn">Roms</button>
-      <div class="dropdown-content">
-        <a href="!Roms.html">Main</a>
-        <a href="https://roms.pickledude448.repl.co/!Pokemon.html" target="_blank" rel="noopener">Pokemon</a>
-        <a href="https://roms.pickledude448.repl.co/!Mario.html" target="_blank" rel="noopener">Super Mario</a>
-        <a href="https://roms.pickledude448.repl.co/!LOZ.html" target="_blank" rel="noopener">LOZ</a>
-        <a href="https://roms.pickledude448.repl.co/!Misc.html" target="_blank" rel="noopener">Misc.</a>
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Roms</button>
+      <div class="dropdown-content" role="menu" aria-label="ROMs submenu">
+        <a href="!Roms.html" class="active" role="menuitem">Main</a>
+        <a href="https://roms.pickledude448.repl.co/!Pokemon.html" target="_blank" rel="noopener noreferrer" role="menuitem">Pokemon</a>
+        <a href="https://roms.pickledude448.repl.co/!Mario.html" target="_blank" rel="noopener noreferrer" role="menuitem">Super Mario</a>
+        <a href="https://roms.pickledude448.repl.co/!LOZ.html" target="_blank" rel="noopener noreferrer" role="menuitem">LOZ</a>
+        <a href="https://roms.pickledude448.repl.co/!Misc.html" target="_blank" rel="noopener noreferrer" role="menuitem">Misc.</a>
       </div>
     </div>
+
     <div class="dropdown">
-      <button class="dropbtn">Games</button>
-      <div class="dropdown-content">
-        <a href="!Games.html">Main</a>
-        <a href="!nonblocked.html" class="active">Unblocked</a>
-        <a href="!Blocked.html">Blocked</a>
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Games</button>
+      <div class="dropdown-content" role="menu" aria-label="Games submenu">
+        <a href="!Games.html" role="menuitem">Main</a>
+        <a href="!nonblocked.html" role="menuitem">Unblocked</a>
+        <a href="!Blocked.html" role="menuitem">Blocked</a>
       </div>
     </div>
+
     <a href="!about.html">About</a>
-  </div>
+  </nav>
 
-  <h1>Unblocked Games</h1>
+  <main>
+    <h1>
+      <a href="https://romsgames.net" target="_blank" rel="noopener noreferrer">Romsgames</a>
+    </h1>
 
-  <p>Welcome to the unblocked games page! Here you can find games that are not restricted by firewalls or network blocks.</p>
+    <p>Romsgames is the website that I use to download the ROMs for the retro games that I want to use.</p>
 
-  <h2>How to use:</h2>
+    <h2>Using romsgames:</h2>
 
-  <p>Simply click on any game link below to start playing instantly without restrictions.</p>
+    <p>
+      Determine the game that you want to play. Open
+      <a href="!Tsunami.html">Tsunami</a> and go to romsgames.net. Search for the game in the top left of the page. Select the
+      game you want. Click "Save Game" on the left side of your screen. Then follow the directions for
+      <a href="!Webretro.html">Webretro</a>.
+    </p>
 
-  <!-- You can add game links or content here matching your needs -->
+    <h2>Game Downloads:</h2>
 
+    <div class="image-links">
+      <a href="https://roms.pickledude448.repl.co/!Mario.html" target="_blank" rel="noopener noreferrer">
+        <img src="Super Mario.png" alt="Super Mario" />
+        Super Mario
+      </a>
+      <a href="https://roms.pickledude448.repl.co/!Pokemon.html" target="_blank" rel="noopener noreferrer">
+        <img src="Pokemon Logo.png" alt="Pokemon" />
+        Pokemon
+      </a>
+      <a href="https://roms.pickledude448.repl.co/!LOZ.html" target="_blank" rel="noopener noreferrer">
+        <img src="Zelda.png" alt="Legend of Zelda" />
+        Legend of Zelda
+      </a>
+      <a href="https://roms.pickledude448.repl.co/!Misc.html" target="_blank" rel="noopener noreferrer">
+        Misc.
+      </a>
+    </div>
+
+    <h4>If you would like to request ROM downloads to be added, email pickledude448@gmail.com with the name of the game and the system it runs on.</h4>
+  </main>
 </body>
 
 </html>
