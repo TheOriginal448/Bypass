@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <title>EaglerCraft</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png" />
+  <style>
+    :root {
+      --bg-dark: #111;
+      --text-light: #eee;
+      --primary: #007bff;
+      --accent: #ff4081;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #222;
+      padding: 10px 0;
+    }
+
+    .topnav a,
+    .dropbtn {
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .topnav a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: #444;
+    }
+
+    .dropdown {
+      position: relative;
+      z-index: 10; /* ensure dropdown container is above other content */
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 42px;
+      left: 0;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000; /* higher z-index for dropdown menu */
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #eee;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #555;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 3em;
+      color: var(--primary);
+    }
+
+    .section {
+      margin: 50px auto;
+      max-width: 800px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+    }
+
+    /* Optional: you can add a card style for the about text */
+    .about-text {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+      max-width: 700px;
+      margin: 40px auto;
+      font-weight: normal;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Proxies</button>
+      <div class="dropdown-content">
+        <a href="!Proxies.html">Main</a>
+        <a href="!Tsunami.html">Tsunami</a>
+        <a href="https://galaxy.hop.sh/web" target="_blank">Interstellar</a>
+        <a href="!Ultraviolet.html">Ultraviolet</a>
+        <a href="https://ultra-max.pickledude448.repl.co/" target="_blank">Ultra-Max</a>
+      </div>
+    </div>
+    <a href="!Webretro.html">Webretro</a>
+    <div class="dropdown">
+      <button class="dropbtn">Roms</button>
+      <div class="dropdown-content">
+        <a href="!Roms.html">Main</a>
+        <a href="https://theoriginal448.github.io/Roms/!Pokemon.html" target="_blank" rel="noopener">Pokemon</a>
+        <a href="https://theoriginal448.github.io/Roms/!Mario.html" target="_blank" rel="noopener">Super Mario</a>
+        <a href="https://theoriginal448.github.io/Roms/!LOZ.html" target="_blank" rel="noopener">LOZ</a>
+        <a href="https://theoriginal448.github.io/Roms/!Misc.html" target="_blank" rel="noopener">Misc.</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Games</button>
+      <div class="dropdown-content">
+        <a href="!Games.html">Main</a>
+        <a href="!nonblocked.html">Nonblocked</a>
+        <a href="!Blocked.html">Blocked</a>
+      </div>
+    </div>
+    <a href="!eaglercraft.html">EaglerCraft</a>
+    <a href="!about.html">About</a>
+  </div>
+
+  <h1>EaglerCraft</h1>
+
+</body>
+
+</html>
